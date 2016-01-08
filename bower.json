@@ -1,7 +1,7 @@
 {
   "name": "n4CurrencyInput",
   "main": "dist/n4currencyinput.js",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "homepage": "https://github.com/tiagor87/n4currencyinput.git",
   "authors": [
     "tiagor87 <tiagor87@gmail.com>"
