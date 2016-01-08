@@ -44,7 +44,7 @@ describe('n4CurrencyInput', function()
       expect(element.on).toHaveBeenCalled();
     });
   });
-  
+
   describe('Functionality', function() {
     var element;
 
@@ -58,7 +58,7 @@ describe('n4CurrencyInput', function()
       $scope.$apply();
       expect(element.val()).toBe('R$ 1234567.89');
     });
-    
+
     it('Should remove any non digit value inserted on the input', function() {
       element.val('01a2b3c4d5,6;7?.8^9/');
       element.trigger('change');
@@ -69,7 +69,7 @@ describe('n4CurrencyInput', function()
       element.trigger('blur');
       expect(element.val()).toBe('R$ 1234567.89');
     });
-    
+
     it('Should allow . caractere on the input', function() {
       element.val('1299');
       element.trigger('change');
@@ -80,8 +80,14 @@ describe('n4CurrencyInput', function()
       element.trigger('blur');
       expect(element.val()).toBe('R$ 12.99');
     });
+
+    it('Should show correct number', function() {
+      $scope.value = 456.34000000000003;
+      $scope.$apply();
+      expect(element.val()).toBe('R$ 456.34');
+    });
   });
-  
+
   describe('Destruction', function() {
     var element;
 
